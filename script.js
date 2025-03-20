@@ -1,5 +1,4 @@
 [JavaScript - script.js]
-```js
 document.querySelectorAll('nav ul li a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -7,4 +6,4 @@ document.querySelectorAll('nav ul li a').forEach(anchor => {
             behavior: 'smooth'
         });
     });
-})
+});
