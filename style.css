@@ -6,10 +6,20 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+body {
+    background-color: #90EE90; /* Light Green */
+    margin: 0;
+    height: 100vh; /* Full page height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
 html{
+    
     scroll-behavior: smooth;
 }
-/* custom scroll bar */
 ::-webkit-scrollbar {
     width: 10px;
 }
