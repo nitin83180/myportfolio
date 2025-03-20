@@ -1,8 +1,12 @@
 body {
     background-color: #90EE90; /* Light Green */
-    background-image: linear-gradient(white 1px, transparent 1px),
-                      linear-gradient(90deg, white 1px, transparent 1px);
-    background-size: 50px 50px; /* Size of the light boxes */
+    background-image: repeating-linear-gradient(
+        0deg, rgba(255, 255, 255, 0.3) 0px, rgba(255, 255, 255, 0.3) 10px, transparent 10px, transparent 50px
+    ),
+    repeating-linear-gradient(
+        90deg, rgba(255, 255, 255, 0.3) 0px, rgba(255, 255, 255, 0.3) 10px, transparent 10px, transparent 50px
+    );
+    background-size: 50px 50px;
     margin: 0;
     height: 100vh;
 }
