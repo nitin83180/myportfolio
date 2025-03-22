@@ -1,40 +1,41 @@
-const sliderControls = document.querySelector(".slider-controls");
-const sliderTabs = sliderControls.querySelectorAll(".slider-tab");
-const sliderIndicator = sliderControls.querySelector(".slider-indicator");
-// Update the indicator
-const updateIndicator = (tab, index) => {
-  document.querySelector(".slider-tab.current")?.classList.remove("current");
-  tab.classList.add("current");
-  sliderIndicator.style.transform = `translateX(${tab.offsetLeft - 20}px)`;
-  sliderIndicator.style.width = `${tab.getBoundingClientRect().width}px`;
-  // Calculate the scroll position and scroll smoothly
-  const scrollLeft = sliderTabs[index].offsetLeft - sliderControls.offsetWidth / 2 + sliderTabs[index].offsetWidth / 2;
-  sliderControls.scrollTo({ left: scrollLeft, behavior: "smooth" });
-}
-// Initialize swiper instance
-const swiper = new Swiper(".slider-container", {
-  effect: "fade",
-  speed: 1300,
-  autoplay: { delay: 4000 },
-  navigation: {
-    prevEl: "#slide-prev",
-    nextEl: "#slide-next",
-  },
-  on: {
-    // Update indicator on slide change
-    slideChange: () => {
-      const currentTabIndex = [...sliderTabs].indexOf(sliderTabs[swiper.activeIndex]);
-      updateIndicator(sliderTabs[swiper.activeIndex], currentTabIndex);
-    },
-    reachEnd: () => swiper.autoplay.stop(),
-  },
+document.addEventListener("DOMContentLoaded", function () {
+    // Smooth scrolling for navigation links
+    document.querySelectorAll("nav ul li a").forEach(anchor => {
+        anchor.addEventListener("click", function (event) {
+            event.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            document.getElementById(targetId).scrollIntoView({
+                behavior: "smooth"
+            });
+        });
+    });
+
+    // Responsive Navbar Toggle (for mobile)
+    const nav = document.querySelector("nav ul");
+    const toggleButton = document.createElement("button");
+    toggleButton.innerText = "☰";
+    toggleButton.classList.add("nav-toggle");
+    document.querySelector("header .container").appendChild(toggleButton);
+
+    toggleButton.addEventListener("click", function () {
+        nav.classList.toggle("active");
+    });
+
+    // Form Validation
+    const form = document.querySelector("form");
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        alert("Thank you! Your message has been sent.");
+        form.reset();
+    });
+
+    // Scroll effect for navbar background
+    window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 50) {
+            header.style.background = "rgba(0, 0, 0, 0.8)";
+        } else {
+            header.style.background = "rgba(0, 0, 0, 0.6)";
+        }
+    });
 });
-// Update the slide on tab click
-sliderTabs.forEach((tab, index) => {
-  tab.addEventListener("click", () => {
-    swiper.slideTo(index);
-    updateIndicator(tab, index);
-  });
-});
-updateIndicator(sliderTabs[0], 0);
-window.addEventListener("resize", () => updateIndicator(sliderTabs[swiper.activeIndex], 0));
