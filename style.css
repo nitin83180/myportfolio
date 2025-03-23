@@ -41,8 +41,8 @@
     margin: auto;
   }
   nav .navbar .logo a{
-    font-weight: 500;
-    font-size: 35px;
+    font-weight: 455;
+    font-size: 30px;
     color: #4070f4;
   }
   nav.sticky .navbar .logo a{
