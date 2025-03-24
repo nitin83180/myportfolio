@@ -1,16 +1,16 @@
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: url("images/bg.jpg") #030728 no-repeat center;
-}
- /* Custom Scroll Bar CSS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+  }
+  /* Custom Scroll Bar CSS */
   ::-webkit-scrollbar {
       width: 10px;
   }
   ::-webkit-scrollbar-track {
-      background: #f1f1f1;
+      background: #412828;
   }
   ::-webkit-scrollbar-thumb {
       background: #6e93f7;
