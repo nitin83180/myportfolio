@@ -20,6 +20,13 @@
   ::-webkit-scrollbar-thumb:hover {
       background: #4070f4;
   }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url("images/bg.jpg") #030728 no-repeat center;
+  }
   /* navbar styling */
   nav{
     position: fixed;
