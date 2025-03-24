@@ -1,11 +1,11 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    scroll-behavior: smooth;
-  }
-  /* Custom Scroll Bar CSS */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: url("images/bg.jpg") #030728 no-repeat center;
+}
+ /* Custom Scroll Bar CSS */
   ::-webkit-scrollbar {
       width: 10px;
   }
@@ -19,13 +19,6 @@
   }
   ::-webkit-scrollbar-thumb:hover {
       background: #4070f4;
-  }
-  body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background: url("images/bg.jpg") #030728 no-repeat center;
   }
   /* navbar styling */
   nav{
